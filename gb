@@ -1,0 +1,47 @@
+local player = game.Players.LocalPlayer
+local playerGui = player.PlayerGui
+local hotbar = playerGui:WaitForChild("Hotbar")
+local backpack = hotbar:WaitForChild("Backpack")
+local hotbarFrame = backpack:WaitForChild("Hotbar")
+
+
+local function setToolName(buttonIndex, newName)
+    local baseButton = hotbarFrame:FindFirstChild(tostring(buttonIndex))
+    if baseButton then
+        local ToolName = baseButton:FindFirstChild("Base"):FindFirstChild("ToolName")
+        if ToolName then
+            ToolName.Text = newName
+        end
+    end
+end
+
+
+while true do
+    setToolName(1, "Shadow and Wind Spin Barage")
+    setToolName(2, "Shadow Fang Wawes")
+    setToolName(3, "Seventh Shadow Blast Explosion")
+    setToolName(4, "Reversal Wind of Shadows")
+    
+    
+    wait(1) 
+end
+
+
+local function findGuiAndSetText()
+    local screenGui = playerGui:FindFirstChild("ScreenGui")
+    if screenGui then
+        local magicHealthFrame = screenGui:FindFirstChild("MagicHealth")
+        if magicHealthFrame then
+            local textLabel = magicHealthFrame:FindFirstChild("TextLabel")
+            if textLabel then
+                textLabel.Text = "SEVENTH SHADOW"
+            end
+        end
+    end
+end
+
+
+while true do
+    findGuiAndSetText()
+    wait(1) 
+end
